@@ -4,7 +4,7 @@
 param(
     [string]$CameraIP = "10.176.12.35",
     [string]$Username = "root",
-    [string]$Password = "Axis@125Apass",
+    [string]$Password = "pass",
     [string]$StreamProfile = "vivek",
     [int]$Duration = 60,
     [string]$OutputDir = "temp"

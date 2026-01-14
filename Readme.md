@@ -31,7 +31,7 @@ The togglable overlays feature in AV1 streams allows viewers to seamlessly switc
 
 - **CameraIP**: IP address of the Axis camera (default: `10.176.12.35`)
 - **Username**: Camera username (default: `root`)
-- **Password**: Camera password (default: `Axis@125Apass`)
+- **Password**: Camera password (default: `pass`)
 - **StreamProfile**: Stream profile name (default: `vivek`)
 - **Duration**: Capture duration in seconds (default: `60`)
 - **OutputDir**: Output directory for captured files (default: `temp`)
