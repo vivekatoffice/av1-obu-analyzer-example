@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AV1 Stream Visualizer | Axis</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Post Processing -->
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+</head>
+
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Initializing AV1 Stream Engine...</p>
+        </div>
+    </div>
+
+    <!-- 3D Background Container -->
+    <div id="canvas-container"></div>
+
+    <!-- UI Overlay -->
+    <div id="ui-layer">
+        <div class="glass-panel">
+            <header>
+                <h1>AV1 STREAM <span style="color: var(--primary-color);">VISUALIZER</span></h1>
+                <p class="subtitle">Next-Gen OBU Stream Analysis & Togglable Overlays</p>
+
+                <div class="status-bar">
+                    <div class="status-dot"></div>
+                    <span id="stream-status">Connected to Axis Camera (10.176.12.35)</span>
+                </div>
+            </header>
+
+            <div class="player-container">
+                <video id="main-player" controls autoplay muted>
+                    <source id="video-source" src="" type="video/mp4; codecs=av01.0.08M.08">
+                    Your browser does not support AV1 playback.
+                </video>
+            </div>
+
+            <div class="controls-container">
+                <button class="control-btn active" onclick="changeStream('off', this)">
+                    <span>🚫</span> Base Layer Only
+                </button>
+                <button class="control-btn" onclick="changeStream('all', this)">
+                    <span>👁️</span> All Overlays
+                </button>
+                <button class="control-btn" onclick="changeStream('text', this)">
+                    <span>📝</span> Text Only
+                </button>
+                <button class="control-btn" onclick="changeStream('image', this)">
+                    <span>🖼️</span> Image Only
+                </button>
+                <button class="control-btn" onclick="changeStream('application', this)">
+                    <span>⚙️</span> App Overlay
+                </button>
+            </div>
+
+            <!-- New Features Section -->
+            <div class="advanced-controls">
+
+                <!-- Recording Controls -->
+                <div class="control-group">
+                    <h3>🔴 Stream Recording</h3>
+                    <div class="btn-group">
+                        <button id="btn-record" class="control-btn record-btn" onclick="toggleRecording()">
+                            <div class="record-dot"></div> <span id="record-text">Start Recording</span>
+                        </button>
+                        <span id="recording-timer" class="timer hidden">00:00</span>
+                    </div>
+                </div>
+
+                <!-- Custom Overlay Controls -->
+                <div class="control-group">
+                    <h3>✨ Custom Overlay</h3>
+                    <div class="input-group">
+                        <input type="text" id="custom-text" placeholder="Enter custom text..." value="Antigravity AI">
+                        <button class="control-btn action-btn" onclick="updateOverlayText()">
+                            Update Text
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

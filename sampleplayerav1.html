@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AV1 Video Streaming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        video {
+            width: 80%;
+            max-width: 800px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>AV1 Video Streaming</h2>
+
+    <!-- Direct AV1 Playback (MP4/WebM) -->
+    <h3>AV1 Video over HTTP with mp4 container with RTSP parameters: videolayers=1&overlays=off</h3>
+    <video controls autoplay>
+        <!-- <source src="output.mp4" type="video/mp4; codecs=av01.0.08M.08"> -->
+        <source src="http://10.176.12.35/axis-cgi/media.cgi?videocodec=av1&container=mp4&videolayers=1&overlays=off" type="video/webm; codecs=av01.0.08M.08">
+        Your browser does not support AV1 playback.
+    </video>
+
+    <!-- Direct AV1 Playback (MP4/WebM) -->
+    <h3>AV1 Video over HTTP with mp4 container with RTSP parameters: videolayers=1&overlays=all</h3>
+    <video controls autoplay>
+        <!-- <source src="output.mp4" type="video/mp4; codecs=av01.0.08M.08"> -->
+        <source src="http://10.176.12.35/axis-cgi/media.cgi?videocodec=av1&container=mp4&videolayers=1&overlays=all" type="video/webm; codecs=av01.0.08M.08">
+        Your browser does not support AV1 playback.
+    </video>
+
+    <!-- Direct AV1 Playback (MP4/WebM) -->
+    <h3>AV1 Video over HTTP with mp4 container with RTSP parameters: videolayers=1&overlays=text</h3>
+    <video controls autoplay>
+        <!-- <source src="output.mp4" type="video/mp4; codecs=av01.0.08M.08"> -->
+        <source src="http://10.176.12.35/axis-cgi/media.cgi?videocodec=av1&container=mp4&videolayers=1&overlays=text" type="video/webm; codecs=av01.0.08M.08">
+        Your browser does not support AV1 playback.
+    </video>
+
+
+    <!-- Direct AV1 Playback (MP4/WebM) -->
+    <h3>AV1 Video over HTTP with mp4 container with RTSP parameters: videolayers=1&overlays=application</h3>
+    <video controls autoplay>
+        <!-- <source src="output.mp4" type="video/mp4; codecs=av01.0.08M.08"> -->
+        <source src="http://10.176.12.35/axis-cgi/media.cgi?videocodec=av1&container=mp4&videolayers=1&overlays=application" type="video/webm; codecs=av01.0.08M.08">
+        Your browser does not support AV1 playback.
+    </video>
+
+
+    <!-- Direct AV1 Playback (MP4/WebM) -->
+    <h3>AV1 Video over HTTP with mp4 container with RTSP parameters: videolayers=1&overlays=image</h3>
+    <video controls autoplay>
+        <!-- <source src="output.mp4" type="video/mp4; codecs=av01.0.08M.08"> -->
+        <source src="http://10.176.12.35/axis-cgi/media.cgi?videocodec=av1&container=mp4&videolayers=1&overlays=image" type="video/webm; codecs=av01.0.08M.08">
+        Your browser does not support AV1 playback.
+    </video>
+
+</body>
+</html>
